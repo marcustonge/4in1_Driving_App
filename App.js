@@ -1,13 +1,17 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
-import { SafeAreaView } from 'react-native-safe-area-context';
-import { NavigationContainer } from '@react-navigation/native';
+import { configureStore } from '@reduxjs/toolkit';
+import {Provider} from 'react-redux';
 import Navigator from './lib/routes/homeStack';
+import rootReducer from './lib/state/stores/rootReducer';
+
+
+const store = configureStore({reducer: rootReducer});
+
 
 export default function App() {
   return (
-    <Navigator />
-
+    <Provider store={store}>
+      <Navigator />
+    </Provider>
   );
 }
 
