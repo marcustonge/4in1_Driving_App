@@ -1,10 +1,14 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
-import Home from './lib/view/home/home';
+import { SafeAreaView } from 'react-native-safe-area-context';
+import { NavigationContainer } from '@react-navigation/native';
+import Navigator from './lib/routes/homeStack';
 
 export default function App() {
   return (
-    Home()
+    <Navigator />
+
   );
 }
+
 
